@@ -1,0 +1,6 @@
+What is 'Strategy Pattern'?
+
+Strategy Pattern defines an algorithm family, 
+each algorithm is wrapped independently, 
+they can be exchanged with each other,
+this pattern lets the algorithm change independently of the clients who use the algorithm.

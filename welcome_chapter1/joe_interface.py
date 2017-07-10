@@ -5,47 +5,47 @@
 
 #Superclass
 class Duck():
-    def __init__(this, mode):
-    	this.mode = mode
+    def __init__(self, mode):
+    	self.mode = mode
 
-    def swim(this):
-        print(this.__class__.__name__ + ": Swim in a pool")
+    def swim(self):
+        print(self.__class__.__name__ + ": Swim in a pool")
 
-    def display(this):       #This method can be reload in subclass.
+    def display(self):       #self method can be reload in subclass.
         pass
 
 #interface
 class Flyable():
-    def fly(this):
-        print(this.__class__.__name__ + ": fly in the sky")
+    def fly(self):
+        print(self.__class__.__name__ + ": fly in the sky")
 
 
 class Quackable():
-    def quack(this):
-        print(this.__class__.__name__ + ": Ga Ga Ga")
+    def quack(self):
+        print(self.__class__.__name__ + ": Ga Ga Ga")
 
 
 #subclass
 class MallardDuck(Duck,Flyable,Quackable):
-    def display(this):       #Green head
-        print(this.__class__.__name__ + ": display as " + this.mode)
+    def display(self):       #Green head
+        print(self.__class__.__name__ + ": display as " + self.mode)
 
 
 class RedheadDuck(Duck,Flyable,Quackable):
-    def display(this):       #Red head
-        print(this.__class__.__name__ + ": display as " + this.mode)
+    def display(self):       #Red head
+        print(self.__class__.__name__ + ": display as " + self.mode)
 
 
 class RubberDuck(Duck,Quackable):
-    def quack(this):         #squeak
-	    print(this.__class__.__name__ + ": Zi Zi Zi")
-    def display(this):       #Rubber
-        print(this.__class__.__name__ + ": display as " + this.mode)
+    def quack(self):         #squeak
+	    print(self.__class__.__name__ + ": Zi Zi Zi")
+    def display(self):       #Rubber
+        print(self.__class__.__name__ + ": display as " + self.mode)
 
 
 class DecoyDuck(Duck):
-	def display(this):       #Decoy, wooden
-	    print(this.__class__.__name__ + ": display as " + this.mode)
+	def display(self):       #Decoy, wooden
+	    print(self.__class__.__name__ + ": display as " + self.mode)
 
 
 

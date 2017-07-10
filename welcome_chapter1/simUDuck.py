@@ -5,29 +5,29 @@
 
 #Superclass
 class Duck():
-	def __init__(this, mode):
-		this.mode = mode
+	def __init__(self, mode):
+		self.mode = mode
 
-	def quack(this):
-		print(this.__class__.__name__ + ": Ga Ga Ga")
+	def quack(self):
+		print(self.__class__.__name__ + ": Ga Ga Ga")
 
-	def swim(this):
-		print(this.__class__.__name__ + ": Swim in a pool")
+	def swim(self):
+		print(self.__class__.__name__ + ": Swim in a pool")
 
-	def display(this):       #This method can be reload in subclass.
+	def display(self):       #self method can be reload in subclass.
 	    pass
 
 
 
 #subclass
 class MallardDuck(Duck):
-    def display(this):      #Green head
-        print(this.__class__.__name__ + ": display as " + this.mode)
+    def display(self):      #Green head
+        print(self.__class__.__name__ + ": display as " + self.mode)
 
 
 class RedheadDuck(Duck):
-    def display(this):       #Red head
-        print(this.__class__.__name__ + ": display as " + this.mode)
+    def display(self):       #Red head
+        print(self.__class__.__name__ + ": display as " + self.mode)
 
 
 if __name__ == '__main__':

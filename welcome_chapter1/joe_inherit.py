@@ -5,37 +5,37 @@
 
 #Superclass
 class Duck():
-    def __init__(this, mode):
-        this.mode = mode
+    def __init__(self, mode):
+        self.mode = mode
 
-    def quack(this):
-        print(this.__class__.__name__ + ": Ga Ga Ga")
+    def quack(self):
+        print(self.__class__.__name__ + ": Ga Ga Ga")
 
-    def swim(this):
-        print(this.__class__.__name__ + ": Swim in a pool")
+    def swim(self):
+        print(self.__class__.__name__ + ": Swim in a pool")
 
-    def display(this):       #This method can be reload in subclass.
-        print(this.__class__.__name__)
+    def display(self):       #self method can be reload in subclass.
+        print(self.__class__.__name__)
 
-    def fly(this):
-        print(this.__class__.__name__ + ": fly in the sky")
+    def fly(self):
+        print(self.__class__.__name__ + ": fly in the sky")
 
 
 
 #subclass
 class MallardDuck(Duck):
-    def display(this):      #Green head
-        print(this.__class__.__name__ + ": display as " + this.mode)
+    def display(self):      #Green head
+        print(self.__class__.__name__ + ": display as " + self.mode)
 
 
 class RedheadDuck(Duck):
-    def display(this):       #Red head
-        print(this.__class__.__name__ + ": display as " + this.mode)
+    def display(self):       #Red head
+        print(self.__class__.__name__ + ": display as " + self.mode)
 
 
 class RubberDuck(Duck):
-    def display(this):
-        print(this.__class__.__name__ + ": display as " + this.mode)
+    def display(self):
+        print(self.__class__.__name__ + ": display as " + self.mode)
 
 if __name__ == '__main__':
     greenduck = MallardDuck("Mallard")
@@ -55,4 +55,4 @@ if __name__ == '__main__':
     rubberduck.quack()
     rubberduck.swim()
     rubberduck.display()
-    rubberduck.fly()         #Question: Rubberduck should not fly in the sky. So inherit reuse cannot resolve this problem.
+    rubberduck.fly()         #Question: Rubberduck should not fly in the sky. So inherit reuse cannot resolve self problem.

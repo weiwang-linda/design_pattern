@@ -65,7 +65,7 @@ class Character(WeaponBehavier):
 	def fight(self):
 		self.weapon.useWeapon()
 
-	def setterWeapon(self, weapon):
+	def setWeapon(self, weapon):
 		self.weapon =  weapon
 
 
@@ -101,12 +101,12 @@ class Knight(Character):
 if __name__ == '__main__':
 	king = King()
 	king.fight()
-	king.setterWeapon(SwordBehavier())
+	king.setWeapon(SwordBehavier())
 	king.fight()
 
 	queen = Queen()
 	queen.fight()
-	queen.setterWeapon(BowAndArrowBehavier())
+	queen.setWeapon(BowAndArrowBehavier())
 	queen.fight()
 
 	troll = Troll()

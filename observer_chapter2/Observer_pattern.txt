@@ -1,0 +1,5 @@
+What is "Observer Pattern"?
+
+
+Definie the dependence of one object (subject) to many objects (Observer).
+When one object update it's status, all of it's dependencers will accept the notice and update automatically. 

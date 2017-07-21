@@ -1,0 +1,58 @@
+@startuml
+
+interface Subject {
+	+registerObserver()
+	+unregisterObserver()
+	+notifyObservers()
+}
+
+interface Observer {
+	+update()
+}
+
+interface DisplayElement {
+	+display()
+}
+
+class WeatherData {
+	+registerObserver()
+	+unregisterObserver()
+	+notifyObservers()
+
+	+getTemp()
+	+getHumidity()
+	+getPressure()
+	+measurementsChanged()
+}
+
+class CurrentConditionsDisplay {
+	+update()
+	+display()
+}
+
+class StatisticsDisplay {
+	+update()
+	+display()
+}
+
+class ForecastDisplay {
+	+update()
+	+display()
+}
+
+class ThirdPartyDisplay {
+	+update()
+	+display()
+}
+
+Subject <|.. WeatherData
+Observer <|.. CurrentConditionsDisplay
+DisplayElement <|.. CurrentConditionsDisplay
+Observer <|.. StatisticsDisplay
+DisplayElement <|.. StatisticsDisplay
+Observer <|.. ForecastDisplay
+DisplayElement <|.. ForecastDisplay
+Observer <|. ThirdPartyDisplay
+DisplayElement <|. ThirdPartyDisplay
+
+@enduml

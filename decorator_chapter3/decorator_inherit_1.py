@@ -4,10 +4,8 @@
 # 出现问题：当咖啡加入各种调料后，需要维护的类的数量几何数增加。当咖啡或调料价格变化使，需要维护修改的价格太多，软件设计缺乏弹性.
 ##########################################
 
-from abc import ABCMeta, abstractmethod
 
 class Beverage():
-	__metaclass__ = ABCMeta
 
 	def __init__(self):
 		self.description = "unknown beverage"
@@ -15,9 +13,8 @@ class Beverage():
 	def getDescription(self):
 		return self.description
 
-	@abstractmethod
 	def cost(self):
-		pass
+		return 0
 
 class HouseBlend(Beverage):
 	def __init__(self, desc, price):

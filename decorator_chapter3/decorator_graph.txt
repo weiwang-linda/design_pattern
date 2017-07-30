@@ -1,0 +1,57 @@
+@startuml
+
+class Component {
+	+methodA()
+	+methodB()
+}
+note top of Component
+Every component can be used singlely, 
+or used wrapped by decorators
+end note
+
+class ConcreteComponent {
+	+methodA()
+	+methodB()
+}
+
+class Decorator {
+	+methodA()
+	+methodB()
+}
+
+note right of Decorator
+Every decorator has a component, 
+that means decorator has 
+a instance vary to keep
+a commponent's quote.
+end note
+
+class ConcreteDecoratorA {
+	wrappedObj : Component
+
+	+methodA()
+	+methodB()
+	+newBehavior()
+}
+
+class ConcreteDecoratorB {
+	wrappedObj : Component
+	newState : Object
+
+	+methodA()
+	+methodB()
+}
+
+note right of ConcreteDecoratorB
+New method can be added to decorator.
+it can be added before or after the 
+old method.
+end note
+
+Component <|-- ConcreteComponent
+Component <|-- Decorator
+Decorator <|-- ConcreteDecoratorA
+Decorator <|-- ConcreteDecoratorB
+Component <-- Decorator
+
+@enduml

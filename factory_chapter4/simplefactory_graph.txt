@@ -1,0 +1,45 @@
+@startuml
+class Pizza {
+	+prepare()
+	+bake()
+	+cut()
+	+box()
+}
+
+class PizzaStore {
+	+orderPizza()
+}
+
+class SimplePizzaFactory {
+	+{static}createPizza()
+}
+
+PizzaStore -right-> SimplePizzaFactory
+SimplePizzaFactory -right-> Pizza
+
+CheesePizza -up-|> Pizza
+VeggiePizza -up-|> Pizza
+ClamPizza -up-|> Pizza
+PepperoniPizza -up-|> Pizza
+
+note left of PizzaStore
+Client of factory, pizza instance
+is got from SimplePizzaFactory
+end note
+
+note top of SimplePizzaFactory
+Factory class which only using
+pizza instance in application.
+end note
+
+note right of Pizza
+<size:18>Abstract</size> product of factory.
+Some useful function can be override.
+end note
+
+note bottom of VeggiePizza
+Real products which extend 
+Pizza interface, so they can
+be created by factory.
+end note
+@enduml

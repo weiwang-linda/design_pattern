@@ -7,41 +7,7 @@
 import time
 
 from abc import ABCMeta, abstractmethod
-
-class Pizza(object):
-	__metaclass__ = ABCMeta
-
-	## 所有类型皮萨都必须实现Pizza接口.
-	@abstractmethod
-	def __init__(self):
-		pass
-
-	def prepare(self):
-		print(self.__class__.__name__ + " is prepared well!")
-
-	def bake(self):
-		print(self.__class__.__name__ + " is baked well!")
-
-	def cut(self):
-		print(self.__class__.__name__ + " is cut!")
-
-	def box(self):
-		print(self.__class__.__name__ + " is boxed already!")
-
-class CheesePizza(Pizza):
-	def __init__(self):
-		super(CheesePizza, self).__init__()
-		self.cheese = 0.5
-
-class GreekPizza(Pizza):
-	def __init__(self):
-		super(GreekPizza, self).__init__()
-
-
-class PepperoniPizza(Pizza):
-	def __init__(self):
-		super(PepperoniPizza, self).__init__()
-		self.pepper = 0.1
+from pizza_basic import CheesePizza, GreekPizza, PepperoniPizza
 
 
 if __name__ == '__main__':

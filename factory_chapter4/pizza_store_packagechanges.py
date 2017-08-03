@@ -5,7 +5,7 @@
 # 变化的部分是创建对象，将其移到orderPizza函数之外，移到另一个对象中。由新对象专职创建对象。新对象就是工厂。
 ######################################################
 
-from pizza_store_manytype import Pizza, CheesePizza, GreekPizza, PepperoniPizza
+from pizza_basic import CheesePizza, GreekPizza, PepperoniPizza
 
 class SimplePizzaFactory():
 	def __init__(self):
@@ -19,10 +19,6 @@ class SimplePizzaFactory():
 			self.pi = GreekPizza()
 		elif type == "pepperoni":
 			self.pi = PepperoniPizza()
-		# elif type == "clam":
-		# 	self.pi = ClamPizza()
-		# elif type == "veggie":
-		# 	self.pi = VeggiePizza()
 		return self.pi
 
 

@@ -74,6 +74,9 @@ class ChicagoStyleCheesePizza(Pizza):
 		self.sauce = "Plum Tomato Sauce"
 		self.toppings = ["Cabbage","Shredded","Mozzarella","Cheese"]
 
+	def cut(self):
+		print("Cutting the pizza into square slices")
+
 class ChicagoStylePepperoniPizza(Pizza):
 	def __init__(self):
 		self.name = "Chicago Style Deep Dish Pepper Pizza"

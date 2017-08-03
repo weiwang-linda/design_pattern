@@ -22,7 +22,7 @@ end note
 
 class PizzaStore {
 	+pi
-	+{abstract}createPizza()
+	#{abstract}createPizza()
 	+orderPizza()
 }
 

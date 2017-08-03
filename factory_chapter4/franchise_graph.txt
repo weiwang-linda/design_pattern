@@ -1,0 +1,52 @@
+@startuml
+class Pizza {
+	+name
+	+dough
+	+sauce
+	+toppings
+
+	+prepare()
+	+bake()
+	+cut()
+	+box()
+}
+
+NYStyleCheesePizza -up-|> Pizza
+NYStylePepperoniPizza -up-|> Pizza
+ChicagoStyleCheesePizza -up-|> Pizza
+ChicagoStylePepperoniPizza -up-|> Pizza
+
+note right of Pizza
+pizza subclass give attributes value.
+end note
+
+class PizzaStore {
+	+pi
+	+{abstract}createPizza()
+	+orderPizza()
+}
+
+note top of PizzaStore
+pi is reference to a Pizza instance.
+end note
+
+class NYStylePizzaStore {
+	+createPizza()
+}
+
+class ChicagoStylePizzaStore {
+	+createPizza()
+}
+
+note top of ChicagoStylePizzaStore
+PizzaStore's subclass give implementation
+for a flavor pizza
+end note
+
+
+PizzaStore <|-down- NYStylePizzaStore
+PizzaStore <|-down- ChicagoStylePizzaStore
+
+
+PizzaStore <-left- Pizza
+@enduml

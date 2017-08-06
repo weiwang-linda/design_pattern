@@ -50,21 +50,20 @@ class NYPizzaStore {
 	+createPizza()
 }
 
-ThickCrustDough <-- ChicagoPizzaIngredientFactory
-PlumTomatoSauce <-- ChicagoPizzaIngredientFactory
-MozzarellaCheese <-- ChicagoPizzaIngredientFactory
-FrozenClams <-- ChicagoPizzaIngredientFactory
+ChicagoPizzaIngredientFactory --> ThickCrustDough
+ChicagoPizzaIngredientFactory --> PlumTomatoSauce
+ChicagoPizzaIngredientFactory --> MozzarellaCheese
+ChicagoPizzaIngredientFactory --> FrozenClams
 
-ThinCrustDough <-- NYPizzaIngredientFactory
-MarinaraSauce <-- NYPizzaIngredientFactory
-ReggianoCheese <-- NYPizzaIngredientFactory
-FreshClams <-- NYPizzaIngredientFactory
+NYPizzaIngredientFactory --> ThinCrustDough
+NYPizzaIngredientFactory --> MarinaraSauce
+NYPizzaIngredientFactory --> ReggianoCheese
+NYPizzaIngredientFactory --> FreshClams
 
-Dough <-down- NYPizzaStore 
-Sauce <-down- NYPizzaStore
-Cheese <-down- NYPizzaStore
-Clams <-down- NYPizzaStore
-
-PizzaIngredientFactory <-left- NYPizzaStore
+NYPizzaStore --> PizzaIngredientFactory
+NYPizzaStore --> Dough
+NYPizzaStore --> Sauce
+NYPizzaStore --> Cheese
+NYPizzaStore --> Clams
 
 @enduml

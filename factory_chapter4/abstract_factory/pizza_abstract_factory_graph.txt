@@ -1,0 +1,70 @@
+@startuml
+Interface PizzaIngredientFactory {
+	+createDough()
+	+createSause()
+	+createCheese()
+	+createVeggies()
+	+createPepperoni()
+	+createClam()
+}
+
+Interface Dough 
+Interface Sauce
+Interface Cheese
+Interface Clams
+
+class NYPizzaIngredientFactory {
+	+createDough()
+	+createSause()
+	+createCheese()
+	+createVeggies()
+	+createPepperoni()
+	+createClam()
+}
+
+class ChicagoPizzaIngredientFactory {
+	+createDough()
+	+createSause()
+	+createCheese()
+	+createVeggies()
+	+createPepperoni()
+	+createClam()
+}
+
+PizzaIngredientFactory <|.down. NYPizzaIngredientFactory
+PizzaIngredientFactory <|.down. ChicagoPizzaIngredientFactory
+
+Dough <|.down. ThickCrustDough
+Dough <|.down. ThinCrustDough
+
+Sauce <|.down. PlumTomatoSauce
+Sauce <|.down. MarinaraSauce
+
+Cheese <|.down. MozzarellaCheese
+Cheese <|.down. ReggianoCheese
+
+Clams <|.down. FrozenClams
+Clams <|.down. FreshClams
+
+class NYPizzaStore {
+	+createPizza()
+}
+
+ThickCrustDough <-- ChicagoPizzaIngredientFactory
+PlumTomatoSauce <-- ChicagoPizzaIngredientFactory
+MozzarellaCheese <-- ChicagoPizzaIngredientFactory
+FrozenClams <-- ChicagoPizzaIngredientFactory
+
+ThinCrustDough <-- NYPizzaIngredientFactory
+MarinaraSauce <-- NYPizzaIngredientFactory
+ReggianoCheese <-- NYPizzaIngredientFactory
+FreshClams <-- NYPizzaIngredientFactory
+
+Dough <-down- NYPizzaStore 
+Sauce <-down- NYPizzaStore
+Cheese <-down- NYPizzaStore
+Clams <-down- NYPizzaStore
+
+PizzaIngredientFactory <-left- NYPizzaStore
+
+@enduml

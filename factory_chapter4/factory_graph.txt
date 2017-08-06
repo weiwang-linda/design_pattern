@@ -1,0 +1,48 @@
+@startuml
+
+class Creator {
+	+{abstract} factoryMethod()
+	+anOperation()
+}
+note top of Creator
+Creator is a class which is instantiated
+all product methods except factoryMethod.
+end note
+
+note right of Creator
+All the subclass of Creator should instantiate
+the abstract method 'factoryMethod()'
+end note
+
+class ConcreteCreator {
+	+factoryMethod()
+}
+
+note right of ConcreteCreator
+Instantiate factoryMethod() function,
+to actually produce needed product.
+end note
+
+class Product {
+	
+}
+
+note left of Product
+All of the products must instantiating the public
+interface, so that the class who using these products
+can referent this interface but not the contrete class.
+end note
+
+class ConcreteProduct {
+	
+}
+
+note bottom of ConcreteCreator
+Only ConcreteCreator know how to create these contrete products.
+end note
+
+Creator <|-down- ConcreteCreator
+Product <|-down- ConcreteProduct
+ConcreteProduct <-left- ConcreteCreator
+
+@enduml
